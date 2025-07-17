@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - Fingerprint ATM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f2f2f2;
+        }
+
+        h2 {
+            color: maroon;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: maroon;
+            color: white;
+        }
+
+        .logout-btn {
+            float: right;
+            padding: 8px 16px;
+            background-color: maroon;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .logout-btn:hover {
+            background-color: #8b0000;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{{ url_for('AdminLogout') }}" class="logout-btn">Logout</a>
+    <h2>Registered Users</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>All Transactions</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Balance</th>
+        </tr>
+        {% for tx in transactions %}
+        <tr>
+            <td>{{ tx[0] }}</td>
+            <td>{{ tx[1] }}</td>
+            <td>{{ tx[2] }}</td>
+            <td>₹{{ tx[3] }}</td>
+            <td>₹{{ tx[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

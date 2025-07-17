@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="{{ url_for('UserScreen') }}">Home</a>
+        <a href="/Deposit">Deposit Amount</a>
+        <a href="/Withdraw">Withdraw Amount</a>
+        <a href="/ViewBalance">View Balance</a>
+        <a href="/Logout">Logout</a>
+    </div>
+
+    <div class="container">
+        <h2>Deposit Amount</h2>
+        <form method="POST" action="/DepositAction">
+            <table>
+                {{ msg1|safe }}
+                <tr>
+                    <td>Amount:</td>
+                    <td><input type="number" name="t2" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;"><input type="submit" value="Deposit"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fingerprint ATM System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("{{ url_for('static', filename='bg.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .home-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: brightness(90%);
+        }
+
+        .home-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 500px;
+        }
+
+        .home-box img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .home-box h1 {
+            color: maroon;
+            margin-bottom: 10px;
+        }
+
+        .home-box p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-group a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 30px;
+            background-color: maroon;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-group a:hover {
+            background-color: #8b0000;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #555;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="home-container">
+        <div class="home-box">
+            <img src="{{ url_for('static', filename='fingerprint.jpg') }}" alt="Fingerprint">
+            <h1>Welcome to Fingerprint ATM</h1>
+            <p>A secure and smart way to manage your banking with biometric authentication.</p>
+
+            <div class="section-title">User Access</div>
+            <div class="btn-group">
+                <a href="{{ url_for('Login') }}">User Login</a></div>
+            <div class="section-title">Admin Access</div>
+            <div class="btn-group">
+                <a href="{{ url_for('AdminLogin') }}">Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

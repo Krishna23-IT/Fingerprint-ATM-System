@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="form-box">
+        <h2>Signup</h2>
+        <form method="POST" enctype="multipart/form-data" action="/SignupAction">
+            <input type="text" name="t1" placeholder="Enter Username" required><br>
+            <input type="password" name="t2" placeholder="Enter Password" required><br>
+            <input type="file" name="t3" accept="image/*" required><br>
+            <input type="submit" value="Signup">
+        </form>
+        <div class="message">{{ msg }}</div>
+        <br>
+        <a href="/Login">Already have an account? Login</a>
+    </div>
+    <div><a href="{{ url_for('index') }}" style="margin-top:20px; display:inline-block; color:blue;">← Back to Home</a></div>
+</body>
+</html>
